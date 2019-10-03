@@ -1,4 +1,13 @@
+var $source,
+    $target;
 
+function init() {
+    if (!$source)
+        $source = $("#source");
+
+    if (!$target)
+        $target = $("#target");
+}
 
 function toHtmlList(lines, ulOrOl) {
     var text;
@@ -38,5 +47,26 @@ function convert(op) {
     const sourceText = $source.val();
     var targetText = toHtmlList(sourceText.split("\n"));
     $target.val(targetText);
+}
+
+function clear() {
+    init();
+
+    $source.val("");
+    $target.val("");
+}
+
+function copy2Clipboard() {
+    init();
+    $target.select();
+    try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        console.debug('Text copied to clipboard!');
+      } catch (err) {
+          window.prompt("To copy the text to clipboard: Ctrl+C, Enter", $$target);
+      }
+    // This is for removing the element
+    //$target.remove();
 }
 
