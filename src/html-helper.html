@@ -1,0 +1,39 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="css/bootstrap.min.css" />
+            <link rel="stylesheet" href="css/styles.css" />
+
+            <!-- Js -->
+            <script src="js/jquery.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+
+            <script src="js/main.js"></script>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Text To Html Conversion</h1>
+            <div class="row">
+
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                        <textarea class="form-control" id="source" rows="100" cols="80" hint="put the text you want to convert here">
+                            line1    &#10;
+                            line2    &#10;
+                            line3    &#10;
+                            &#10;
+                        </textarea>
+                </div>
+                <div class="col-6">
+                        <textarea class="form-control" id="target" rows="4" cols="80"></textarea>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="btnGo" onclick="convert()">Go</button><br>
+            </div>
+        </div>
+
+    </body>
+</html>
